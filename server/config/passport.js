@@ -16,6 +16,8 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
+                console.log("Google Profile:", profile); // ✅ Debug
+
         const email = profile.emails?.[0]?.value;
         if (!email) {
           return done(new Error("No email found in Google profile"), null);
@@ -42,6 +44,8 @@ passport.use(
 
         done(null, user);
       } catch (err) {
+                console.error("Google Auth Error:", err); // ✅ See error in logs
+
         done(err, null);
       }
     }
