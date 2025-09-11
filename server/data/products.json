@@ -1,0 +1,396 @@
+[
+    {
+        "name": "Helix Maths Set Pack Of 12 (Handy Plastic Case)",
+        "description": "Complete mathematics set with compass, protractor, rulers, and pencils in a durable plastic case. Perfect for students and professionals.",
+        "price": 299,
+        "originalPrice": 24.0,
+        "category": "School Supplies",
+        "brand": "Helix",
+        "sku": "HLX-MATH-001",
+        "images": [
+            {
+                "url": "https://dgduupz79pcvd.cloudfront.net/productimages/vow_api/l/hx52959_01.jpg",
+                "alt": "Helix Mathematics Set"
+            }
+        ],
+        "stock": 50,
+        "onSale": true,
+        "salePercentage": 45,
+        "tags": [
+            "mathematics",
+            "compass",
+            "school",
+            "students"
+        ],
+        "specifications": [
+            {
+                "key": "Material",
+                "value": "Plastic Case"
+            },
+            {
+                "key": "Items Included",
+                "value": "12 pieces"
+            },
+            {
+                "key": "Age Group",
+                "value": "8+ years"
+            }
+        ]
+    },
+    {
+        "name": "Clairefontaine Assorted A A5 Europa Notemakers",
+        "description": "High-quality A5 notebooks with assorted covers. Premium paper quality for smooth writing experience.",
+        "price": 245,
+        "category": "Paper & Notebooks",
+        "brand": "Clairefontaine",
+        "sku": "CLF-NOTE-002",
+        "images": [
+            {
+                "url": "https://cdn3.evostore.io/productimages/vow_api/l/gh3155_01.jpg",
+                "alt": "Clairefontaine A5 Notebooks"
+            }
+        ],
+        "stock": 75,
+        "tags": [
+            "notebook",
+            "writing",
+            "premium",
+            "A5"
+        ],
+        "specifications": [
+            {
+                "key": "Size",
+                "value": "A5 (148 x 210 mm)"
+            },
+            {
+                "key": "Pages",
+                "value": "192 pages"
+            },
+            {
+                "key": "Paper Weight",
+                "value": "90gsm"
+            }
+        ]
+    },
+    {
+        "name": "Fantastic Wooden Watch",
+        "description": "Elegant wooden desk organizer with multiple compartments for pens, pencils, and small office supplies.",
+        "price": 900.49,
+        "category": "Desk Accessories",
+        "brand": "WoodCraft",
+        "sku": "WC-WATCH-003",
+        "images": [
+            {
+                "url": "https://m.media-amazon.com/images/I/51-0cWNmZDL.jpg",
+                "alt": "Wooden Desk Organizer"
+            }
+        ],
+        "stock": 25,
+        "isFeatured": true,
+        "tags": [
+            "wooden",
+            "organizer",
+            "desk",
+            "premium"
+        ],
+        "specifications": [
+            {
+                "key": "Material",
+                "value": "Solid Wood"
+            },
+            {
+                "key": "Dimensions",
+                "value": "25 x 15 x 10 cm"
+            },
+            {
+                "key": "Compartments",
+                "value": "6 sections"
+            }
+        ]
+    },
+    {
+        "name": "Aerodynamic Laptop Parts",
+        "description": "High-quality laptop accessories and replacement parts for office computers and workstations.",
+        "price": 1227.07,
+        "originalPrice": 150.0,
+        "category": "Others",
+        "brand": "TechPro",
+        "sku": "TP-LAPTOP-004",
+        "images": [
+            {
+                "url": "https://5.imimg.com/data5/ANDROID/Default/2021/5/XK/IX/VG/49806835/product-jpeg-1000x1000.png",
+                "alt": "Laptop Accessories"
+            }
+        ],
+        "stock": 30,
+        "onSale": true,
+        "salePercentage": 15,
+        "tags": [
+            "laptop",
+            "accessories",
+            "computer",
+            "office"
+        ]
+    },
+    {
+        "name": "Madison Range Shoes Storage Box",
+        "description": "Versatile storage solution perfect for organizing office supplies, documents, and personal items.",
+        "price": 652.74,
+        "category": "Office Basics",
+        "brand": "Madison",
+        "sku": "MAD-STOR-005",
+        "images": [
+            {
+                "url": "https://media.landmarkshops.in/cdn-cgi/image/h=1420,w=1420,q=85,fit=cover/homecentre/1000014751361-1000014751361-702_02-2100.jpg",
+                "alt": "Storage Box"
+            }
+        ],
+        "stock": 20,
+        "tags": [
+            "storage",
+            "organization",
+            "box",
+            "office"
+        ]
+    },
+    {
+        "name": "Enormous Aluminum Gloves",
+        "description": "Protective aluminum-coated gloves for handling office equipment and machinery safely.",
+        "price": 277.73,
+        "originalPrice": 95.0,
+        "category": "Others",
+        "brand": "SafetyFirst",
+        "sku": "SF-GLOVE-006",
+        "images": [
+            {
+                "url": "https://tiimg.tistatic.com/fp/1/007/336/reusable-fire-heat-resistant-cotton-kevlar-lining-aluminized-safety-hand-gloves-716.jpg",
+                "alt": "Aluminum Gloves"
+            }
+        ],
+        "stock": 40,
+        "onSale": true,
+        "salePercentage": 18,
+        "tags": [
+            "safety",
+            "gloves",
+            "protection",
+            "aluminum"
+        ]
+    },
+    {
+        "name": "Synergistic Bronze Knife Letter Opener",
+        "description": "Premium bronze letter opener with ergonomic handle. Essential tool for office mail handling.",
+        "price": 308.77,
+        "originalPrice": 125.0,
+        "category": "Office Basics",
+        "brand": "Bronze Craft",
+        "sku": "BC-OPENER-007",
+        "images": [
+            {
+                "url": "https://www.brandless.co.in/cdn/shop/products/IMG_5847.jpg?v=1606379203&width=1100",
+                "alt": "Bronze Letter Opener"
+            }
+        ],
+        "stock": 35,
+        "onSale": true,
+        "salePercentage": 13,
+        "tags": [
+            "letter opener",
+            "bronze",
+            "office",
+            "mail"
+        ]
+    },
+    {
+        "name": "Heavy Duty Linen  Binder",
+        "description": "Durable linen-covered binder for important documents and presentations. Professional appearance guaranteed.",
+        "price": 366.77,
+        "category": "Files & Folders",
+        "brand": "Professional Plus",
+        "sku": "PP-BINDER-008",
+        "images": [
+            {
+                "url": "https://m.media-amazon.com/images/I/91VaIYnaGXL._SL1500_.jpg",
+                "alt": "Linen Document Binder"
+            }
+        ],
+        "stock": 45,
+        "isFeatured": true,
+        "tags": [
+            "binder",
+            "linen",
+            "documents",
+            "professional"
+        ]
+    },
+    {
+        "name": "Premium Ballpoint Pen Set",
+        "description": "Set of 12 premium ballpoint pens with smooth ink flow. Perfect for professional writing needs.",
+        "price": 124.99,
+        "category": "Pens & Writing",
+        "brand": "WriteWell",
+        "sku": "WW-PEN-012",
+        "images": [
+            {
+                "url": "https://www.signacpens.com/cdn/shop/files/SIGNAC_-_SET_3.png?v=1754568436",
+                "alt": "Premium Ballpoint Pen Set"
+            }
+        ],
+        "stock": 100,
+        "tags": [
+            "pens",
+            "ballpoint",
+            "writing",
+            "premium"
+        ]
+    },
+    {
+        "name": "Executive Leather Notebook",
+        "description": "Hardcover A5 leather notebook with 200 ruled pages. Ideal for meetings and professional use.",
+        "price": 19.99,
+        "category": "Files & Folders",
+        "brand": "NoteMaster",
+        "sku": "NM-NBK-200",
+        "images": [
+            {
+                "url": "https://m.media-amazon.com/images/I/81Vg-AkzhXL._SL1500_.jpg",
+                "alt": "Executive Leather Notebook"
+            }
+        ],
+        "stock": 75,
+        "tags": [
+            "notebook",
+            "journal",
+            "stationery",
+            "office"
+        ]
+    },
+    {
+        "name": "Ergonomic Office Chair",
+        "description": "Adjustable office chair with lumbar support, breathable mesh back, and cushioned seat for long working hours.",
+        "price": 3199.99,
+        "category": "Office Basics",
+        "brand": "ComfortSeating",
+        "sku": "CS-CHR-ERG01",
+        "images": [
+            {
+                "url": "https://ik.imagekit.io/2xkwa8s1i/img/npl_raw_images/GRAVINEW2925/WSCHRGRAVIHBNBWYWEGYR1/WSCHRGRAVIHBNBWYWEGYR1_WB_2.jpg?tr=w-1200",
+                "alt": "Ergonomic Office Chair"
+            }
+        ],
+        "stock": 25,
+        "isFeatured": true,
+        "tags": [
+            "chair",
+            "furniture",
+            "ergonomic",
+            "office"
+        ]
+    },
+    {
+        "name": "Laser Printer - Monochrome",
+        "description": "High-speed monochrome laser printer with wireless connectivity and duplex printing.",
+        "price": 5249.99,
+        "category": "Office Basics",
+        "brand": "PrintPro",
+        "sku": "PP-PRT-LAS01",
+        "images": [
+            {
+                "url": "https://printerpoint.co.in/wp-content/uploads/2019/02/81uIUpYOvpL._SL1500_-1024x1024.jpg",
+                "alt": "Laser Printer"
+            }
+        ],
+        "stock": 15,
+        "tags": [
+            "printer",
+            "laser",
+            "office",
+            "electronics"
+        ]
+    },
+    {
+        "name": "Desk Organizer Set",
+        "description": "5-piece desk organizer set including pen holder, file tray, sticky note holder, and letter sorter.",
+        "price": 4999,
+        "category": "Office Basics",
+        "brand": "DeskMate",
+        "sku": "DM-ORG-005",
+        "images": [
+            {
+                "url": "https://m.media-amazon.com/images/I/614VsvE9cVL._SL1140_.jpg",
+                "alt": "Desk Organizer Set"
+            }
+        ],
+        "stock": 60,
+        "isFeatured": true,
+        "tags": [
+            "organizer",
+            "desk",
+            "office",
+            "storage"
+        ]
+    },
+    {
+        "name": "Whiteboard with Stand",
+        "description": "Magnetic dry-erase whiteboard with adjustable stand. Includes markers and eraser.",
+        "price": 829.99,
+        "category": "Office Basics",
+        "brand": "BoardPro",
+        "sku": "BP-WBD-060",
+        "images": [
+            {
+                "url": "https://5.imimg.com/data5/SELLER/Default/2024/5/419095415/JU/OD/SW/5159121/whiteboard-with-stand-1000x1000.jpg",
+                "alt": "Whiteboard with Stand"
+            }
+        ],
+        "stock": 30,
+        "tags": [
+            "whiteboard",
+            "presentation",
+            "office",
+            "tools"
+        ]
+    },
+    {
+        "name": "Wireless Keyboard & Mouse Combo",
+        "description": "Slim wireless keyboard and ergonomic mouse combo with long battery life.",
+        "price": 1249.99,
+        "category": "Others",
+        "brand": "TechEase",
+        "sku": "TE-KBM-002",
+        "images": [
+            {
+                "url": "https://m.media-amazon.com/images/I/71g3CMKoHML._SL1500_.jpg",
+                "alt": "Wireless Keyboard and Mouse Combo"
+            }
+        ],
+        "stock": 80,
+        "tags": [
+            "keyboard",
+            "mouse",
+            "wireless",
+            "computer"
+        ]
+    },
+    {
+        "name": "Filing Cabinet - 3 Drawer",
+        "description": "Metal filing cabinet with lockable 3 drawers for secure document storage.",
+        "price": 4159.99,
+        "category": "Office Basics",
+        "brand": "SafeFiles",
+        "sku": "SF-FCAB-003",
+        "images": [
+            {
+                "url": "https://www.jinyingfurniture.com/uploads/37914/movable-office-3-drawer-storage-cabineta5c60.png",
+                "alt": "Filing Cabinet"
+            }
+        ],
+        "stock": 20,
+        "tags": [
+            "cabinet",
+            "storage",
+            "office",
+            "documents"
+        ]
+    }
+]
