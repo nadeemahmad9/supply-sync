@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }))
 // CORS configuration
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    origin: ['https://supplysyncapp.netlify.app', 'http://localhost:5174'],
     credentials: true,
   }),
 )
