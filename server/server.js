@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(
   cors({
     origin: ['https://supplysyncapp.netlify.app', 'http://localhost:5174'],
-     methods: "GET,POST,PUT,DELETE",
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   }),
 )
