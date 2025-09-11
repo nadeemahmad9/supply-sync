@@ -224,50 +224,102 @@ router.post(
 
 
 
+// router.get(
+//   "/google",
+//   passport.authenticate("google", { scope: ["profile", "email"] })
+// );
+
+// // @desc   Google callback
+// router.get(
+//   "/google/callback",
+//   passport.authenticate("google", { session: false }),
+//   async (req, res) => {
+//     try {
+//       // Find existing user by email
+//       let user = await User.findOne({ email: req.user.email });
+
+//       if (!user) {
+//         // Create a new user if not found
+//         user = await User.create({
+//           name: req.user.name,
+//           email: req.user.email,
+//           password: "google-oauth", // placeholder password
+//           avatar: req.user.avatar || null,
+//         });
+//       } else {
+//         // Update profile picture if changed or missing
+//         if (req.user.avatar && user.avatar !== req.user.avatar) {
+//           user.avatar = req.user.avatar;
+//           await user.save();
+//         }
+//       }
+
+//       // Generate JWT
+//       const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+//         expiresIn: "20d",
+//       });
+
+//       // Redirect to frontend with token
+// res.redirect(`${process.env.CLIENT_URL}/login?token=${token}`);
+
+//     } catch (err) {
+//       console.error("Google callback error:", err);
+//       res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed}`);
+//     }
+//   }
+// );
+
+
+// @desc    Start Google OAuth
+// @route   GET /api/auth/google
 router.get(
   "/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-// @desc   Google callback
+// @desc    Google OAuth callback
+// @route   GET /api/auth/google/callback
 router.get(
   "/google/callback",
-  passport.authenticate("google", { session: false }),
+  passport.authenticate("google", { failureRedirect: `${process.env.CLIENT_URL}/login` }),
   async (req, res) => {
     try {
-      // Find existing user by email
+      // Find or create user
       let user = await User.findOne({ email: req.user.email });
 
       if (!user) {
-        // Create a new user if not found
         user = await User.create({
           name: req.user.name,
           email: req.user.email,
-          password: "google-oauth", // placeholder password
+          password: "google-oauth",
           avatar: req.user.avatar || null,
         });
       } else {
-        // Update profile picture if changed or missing
         if (req.user.avatar && user.avatar !== req.user.avatar) {
           user.avatar = req.user.avatar;
           await user.save();
         }
       }
 
-      // Generate JWT
-      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+      // Generate JWT token
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: "20d",
       });
 
       // Redirect to frontend with token
-res.redirect(`${process.env.CLIENT_URL}/login?token=${token}`);
+      const redirectUrl =
+        user.role === "admin"
+          ? `${process.env.ADMIN_URL}/dashboard?token=${token}`
+          : `${process.env.CLIENT_URL}/dashboard?token=${token}`;
 
+      res.redirect(redirectUrl);
     } catch (err) {
       console.error("Google callback error:", err);
-      res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed}`);
+      res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed`);
     }
   }
 );
+
 
 // @desc   Get logged-in Google user
 router.get("/google/user", protect, async (req, res) => {
