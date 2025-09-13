@@ -499,5 +499,41 @@ router.put("/orders/:id/status", protect, adminOnly, async (req, res) => {
   }
 });
 
+// Create new product
+router.post("/products", protect, adminOnly, async (req, res) => {
+  try {
+    const productData = req.body;
+    const product = await Product.create(productData);
+    res.status(201).json({ success: true, data: product });
+  } catch (err) {
+    console.error("Error creating product:", err);
+    res.status(500).json({ success: false, message: "Failed to create product" });
+  }
+});
+
+// Update existing product
+router.put("/products/:id", protect, adminOnly, async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!product) return res.status(404).json({ success: false, message: "Product not found" });
+
+    res.json({ success: true, data: product });
+  } catch (err) {
+    console.error("Error updating product:", err);
+    res.status(500).json({ success: false, message: "Failed to update product" });
+  }
+});
+
+// Get all products (optional for admin dashboard)
+router.get("/products", protect, adminOnly, async (req, res) => {
+  try {
+    const products = await Product.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: products });
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    res.status(500).json({ success: false, message: "Failed to fetch products" });
+  }
+});
+
 
 module.exports = router
