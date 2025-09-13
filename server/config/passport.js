@@ -32,12 +32,12 @@ passport.use(
             name: profile.displayName,
             email: email,
             password: "google-oauth", // placeholder since Google handles auth
-            profilePic: profile.photos?.[0]?.value || "",
+            Avatar: profile.photos?.[0]?.value || "",
           });
         } else {
           // Update profile picture if different or missing
-          if (profile.photos?.[0]?.value && user.profilePic !== profile.photos[0].value) {
-            user.profilePic = profile.photos[0].value;
+          if (profile.photos?.[0]?.value && user.avatar !== profile.photos[0].value) {
+            user.avatar = profile.photos[0].value;
             await user.save();
           }
         }
