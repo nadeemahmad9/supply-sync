@@ -4,6 +4,9 @@ const jwt = require("jsonwebtoken")
 const passport = require("passport")
 const User = require("../models/User")
 const { protect } = require("../middleware/auth");
+const dotenv = require("dotenv")
+dotenv.config();
+
 
 const { body, validationResult } = require("express-validator")
 
