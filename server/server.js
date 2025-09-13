@@ -236,7 +236,15 @@ io.on("connection", (socket) => {
   console.log("⚡ New client connected:", socket.id);
 
   // Send welcome message
-  socket.emit("notification", { message: "🔔 Connected to real-time updates!" });
+// Example: whenever a new order is placed
+socket.on("newOrder", (order) => {
+  io.emit("notification", { message: `🛒 New order placed by ${order.user}` });
+});
+
+// Example: admin adds product
+socket.on("newProduct", (product) => {
+  io.emit("notification", { message: `📦 New product added: ${product.name}` });
+});
 
   // Listen for custom notifications (optional)
   socket.on("sendNotification", (data) => {
