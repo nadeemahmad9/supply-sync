@@ -3,6 +3,8 @@ const User = require("../models/User")
 const Product = require("../models/Product")
 const Order = require("../models/Order")
 const { protect, adminOnly } = require("../middleware/auth")
+const { nanoid } = require("nanoid"); // npm i nanoid
+
 
 const router = express.Router()
 
@@ -500,14 +502,30 @@ router.put("/orders/:id/status", protect, adminOnly, async (req, res) => {
 });
 
 // Create new product
+// router.post("/products", protect, adminOnly, async (req, res) => {
+//   try {
+//     const productData = req.body;
+//     const product = await Product.create(productData);
+//     res.status(201).json({ success: true, data: product });
+//   } catch (err) {
+//     console.error("Error creating product:", err);
+//     res.status(500).json({ success: false, message: "Failed to create product" });
+//   }
+// });
+
+
 router.post("/products", protect, adminOnly, async (req, res) => {
   try {
-    const productData = req.body;
-    const product = await Product.create(productData);
-    res.status(201).json({ success: true, data: product });
-  } catch (err) {
-    console.error("Error creating product:", err);
-    res.status(500).json({ success: false, message: "Failed to create product" });
+    const newProduct = new Product({
+      ...req.body,
+      sku: nanoid(8), // generates 8-char unique SKU
+      isActive: true,
+    });
+    const savedProduct = await newProduct.save();
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    console.error("Error creating product:", error);
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 
