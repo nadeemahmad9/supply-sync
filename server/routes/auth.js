@@ -272,54 +272,116 @@ router.post(
 
 // @desc    Start Google OAuth
 // @route   GET /api/auth/google
+// router.get(
+//   "/google",
+//   passport.authenticate("google", { scope: ["profile", "email"] })
+// );
+
+// // @desc    Google OAuth callback
+// // @route   GET /api/auth/google/callback
+// router.get(
+//   "/google/callback",
+//   passport.authenticate("google", { failureRedirect: `${process.env.CLIENT_URL}/login` }),
+//   async (req, res) => {
+//     try {
+//       // Find or create user
+//       let user = await User.findOne({ email: req.user.email });
+
+//       if (!user) {
+//         user = await User.create({
+//           name: req.user.name,
+//           email: req.user.email,
+//           password: "google-oauth",
+//           avatar: req.user.avatar || null,
+//         });
+//       } else {
+//         if (req.user.avatar && user.avatar !== req.user.avatar) {
+//           user.avatar = req.user.avatar;
+//           await user.save();
+//         }
+//       }
+
+//       // Generate JWT token
+//       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+//         expiresIn: "20d",
+//       });
+
+//       // Redirect to frontend with token
+//       const redirectUrl =
+//         user.role === "admin"
+//           ? `${process.env.ADMIN_URL}/dashboard?token=${token}`
+//           : `${process.env.CLIENT_URL}/dashboard?token=${token}`;
+
+//       res.redirect(redirectUrl);
+//     } catch (err) {
+//       console.error("Google callback error:", err);
+//       res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed`);
+//     }
+//   }
+// );
+
+
+// // @desc   Get logged-in Google user
+// router.get("/google/user", protect, async (req, res) => {
+//   try {
+//     if (!req.user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+//     res.json(req.user); // full user object without password
+//   } catch (err) {
+//     console.error("Error fetching Google user:", err);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+
+
+
+// @desc   Start Google login
 router.get(
   "/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-// @desc    Google OAuth callback
-// @route   GET /api/auth/google/callback
+// @desc   Google callback
 router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: `${process.env.CLIENT_URL}/login` }),
+  passport.authenticate("google", { session: false }),
   async (req, res) => {
     try {
-      // Find or create user
+      // Find existing user by email
       let user = await User.findOne({ email: req.user.email });
 
       if (!user) {
+        // Create a new user if not found
         user = await User.create({
           name: req.user.name,
           email: req.user.email,
-          password: "google-oauth",
+          password: "google-oauth", // placeholder password
           avatar: req.user.avatar || null,
         });
       } else {
+        // Update profile picture if changed or missing
         if (req.user.avatar && user.avatar !== req.user.avatar) {
           user.avatar = req.user.avatar;
           await user.save();
         }
       }
 
-      // Generate JWT token
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      // Generate JWT
+      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
         expiresIn: "20d",
       });
 
       // Redirect to frontend with token
-      const redirectUrl =
-        user.role === "admin"
-          ? `${process.env.ADMIN_URL}/dashboard?token=${token}`
-          : `${process.env.CLIENT_URL}/dashboard?token=${token}`;
+res.redirect(`${process.env.CLIENT_URL}/login?token=${token}`);
 
-      res.redirect(redirectUrl);
     } catch (err) {
       console.error("Google callback error:", err);
-      res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed`);
+      res.redirect(`${process.env.CLIENT_URL}/login?error=google_auth_failed}`);
     }
   }
 );
-
 
 // @desc   Get logged-in Google user
 router.get("/google/user", protect, async (req, res) => {
@@ -333,6 +395,8 @@ router.get("/google/user", protect, async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+
 
 
 // @desc    Get current user
